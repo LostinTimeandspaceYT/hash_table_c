@@ -1,5 +1,21 @@
+/** @file hashtable.c
+ *
+ * @brief This module is the hash table implementation.
+ *
+ * @author Nathan Winslow, 2024
+ *
+ * @par
+ * credit to Digital Ocean author, Vijaykrishna Ram for the basis of this data
+ * structure.
+ *
+ * The intention with this module is to expand on the initial work and create a
+ * generic `hash_table_t` .
+ *
+ * source:
+ * https://www.digitalocean.com/community/tutorials/hash-table-in-c-plus-plus
+ *
+ */
 #include "hashtable.h"
-#include <string.h>
 
 int hash_function(char *str) {
   int hash_val = 0;
