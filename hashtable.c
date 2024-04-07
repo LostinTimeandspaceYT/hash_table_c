@@ -15,7 +15,15 @@
  * https://www.digitalocean.com/community/tutorials/hash-table-in-c-plus-plus
  *
  */
+
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #include "hashtable.h"
+
+static const uint8_t HASH_TABLE_SIZE = 255u;
 
 int hash_function(char *str) {
   int hash_val = 0;
@@ -26,7 +34,7 @@ int hash_function(char *str) {
     hash_val = hash_val << 1;
   }
 
-  // TODO: do some other math here
+  /*   TODO: do some other math here */
 
   return hash_val % HASH_TABLE_SIZE;
 }
@@ -163,7 +171,7 @@ void hash_table_handle_collision(hash_table_t *table, int index,
   linked_list_t *head = table->buckets[index];
 
   if (head != NULL) {
-    table->buckets[index] - linked_list_insert(head, item);
+    table->buckets[index] = linked_list_insert(head, item);
     return;
   }
   head = linked_list_allocate();
@@ -213,7 +221,7 @@ linked_list_t *linked_list_insert(linked_list_t *list, hash_item_t *item) {
     head->next = NULL;
     list = head;
     return list;
-  } else if (list->next == NULL) { // TODO: Check if necessary
+  } else if (list->next == NULL) {
     linked_list_t *node = linked_list_allocate();
     node->item = item;
     node->next = NULL;

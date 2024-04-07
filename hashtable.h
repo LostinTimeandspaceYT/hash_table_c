@@ -11,16 +11,8 @@
  * https://www.digitalocean.com/community/tutorials/hash-table-in-c-plus-plus
  */
 
-#include <math.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
-
-static const uint8_t HASH_TABLE_SIZE = 255u;
 
 typedef struct hash_item_t {
   char *key;
